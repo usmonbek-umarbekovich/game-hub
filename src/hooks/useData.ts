@@ -14,13 +14,16 @@ const useData = <T>(
 ) => {
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(
     () => {
       const controller = new AbortController();
 
       const fetchGames = async () => {
+        setIsLoading(true);
+        setData([]);
+        
         try {
           const res = await apiClient.get<FetchResponse<T>>(endpoint, {
             signal: controller.signal,
