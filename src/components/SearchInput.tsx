@@ -2,11 +2,11 @@ import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { FormEvent, useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
-interface SearchInputProps {
+interface Props {
   onSearch: (searchText: string) => void;
 }
 
-function SearchInput({ onSearch }: SearchInputProps) {
+function SearchInput({ onSearch }: Props) {
   const ref = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: FormEvent) => {

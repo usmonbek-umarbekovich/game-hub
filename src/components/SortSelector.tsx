@@ -10,12 +10,12 @@ const sortOrders = [
   { value: '-rating', label: 'Average rating' },
 ];
 
-interface SortSelectorProps {
+interface Props {
   sortOrder: string;
   onSelectSortOrder: (sortOrder: string) => void;
 }
 
-function SortSelector({ sortOrder, onSelectSortOrder }: SortSelectorProps) {
+function SortSelector({ sortOrder, onSelectSortOrder }: Props) {
   const currentSortOrder = sortOrders.find(order => order.value === sortOrder);
 
   return (

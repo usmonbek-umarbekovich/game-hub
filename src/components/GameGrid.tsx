@@ -6,11 +6,11 @@ import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';
 import GameCardContainer from './GameCardContainer';
 
-interface GameGridProps {
+interface Props {
   gameQuery: GameQuery;
 }
 
-function GameGrid({ gameQuery }: GameGridProps) {
+function GameGrid({ gameQuery }: Props) {
   const { data, error, isLoading } = useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
 

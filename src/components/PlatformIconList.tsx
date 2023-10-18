@@ -12,7 +12,7 @@ import { BsGlobe } from 'react-icons/bs';
 import { IconType } from 'react-icons';
 
 import { HStack, Icon } from '@chakra-ui/react';
-import { Platform } from '../hooks/useGames';
+import { Platform } from '../hooks/usePlatforms';
 
 const iconMap: { [key: string]: IconType } = {
   pc: FaWindows,
@@ -26,11 +26,11 @@ const iconMap: { [key: string]: IconType } = {
   web: BsGlobe,
 };
 
-interface PlatformIconListProps {
+interface Props {
   platforms: Platform[];
 }
 
-function PlatformIconList({ platforms }: PlatformIconListProps) {
+function PlatformIconList({ platforms }: Props) {
   return (
     <HStack marginY={1}>
       {platforms.map(platform => (

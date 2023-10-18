@@ -4,11 +4,11 @@ import PlatformIconList from './PlatformIconList';
 import CriticScore from './CriticScore';
 import getCroppedImageUrl from '../services/image-url';
 
-interface GameCardProps {
+interface Props {
   game: Game;
 }
 
-function GameCard({ game }: GameCardProps) {
+function GameCard({ game }: Props) {
   return (
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
