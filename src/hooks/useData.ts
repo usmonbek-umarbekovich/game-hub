@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { CanceledError, AxiosError, AxiosRequestConfig } from 'axios';
 import apiClient from '../services/api-client';
 
-interface FetchResponse<T> {
+export interface FetchResponse<T> {
   count: number;
   results: T[];
 }
@@ -20,10 +20,10 @@ const useData = <T>(
     () => {
       const controller = new AbortController();
 
-      const fetchGames = async () => {
+      const fetchData = async () => {
         setIsLoading(true);
         setData([]);
-        
+
         try {
           const res = await apiClient.get<FetchResponse<T>>(endpoint, {
             signal: controller.signal,
@@ -37,7 +37,7 @@ const useData = <T>(
           setIsLoading(false);
         }
       };
-      fetchGames();
+      fetchData();
 
       return () => controller.abort();
     },
