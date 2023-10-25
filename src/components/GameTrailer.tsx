@@ -14,12 +14,15 @@ function GameTrailer({ gameId }: Props) {
   const firstTrailer = trailers?.results[0];
   if (!firstTrailer) return null;
 
-  return firstTrailer ? (
-    <video
-      src={firstTrailer?.data[480]}
-      poster={firstTrailer.preview}
-      controls
-    />
-  ) : null;
+  return (
+    firstTrailer && (
+      <video
+        src={firstTrailer?.data[480]}
+        poster={firstTrailer.preview}
+        controls
+        style={{ height: '480px' }}
+      />
+    )
+  );
 }
 export default GameTrailer;
