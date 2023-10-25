@@ -12,7 +12,7 @@ import { BsGlobe } from 'react-icons/bs';
 import { IconType } from 'react-icons';
 
 import { HStack, Icon } from '@chakra-ui/react';
-import { Platform } from '../hooks/usePlatforms';
+import { Platform } from '../entities/Platform';
 
 const iconMap: { [key: string]: IconType } = {
   pc: FaWindows,
