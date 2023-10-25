@@ -20,6 +20,8 @@ function GameTrailer({ gameId }: Props) {
         src={firstTrailer?.data[480]}
         poster={firstTrailer.preview}
         controls
+        width="100%"
+        autoPlay={true}
       />
     )
   );
